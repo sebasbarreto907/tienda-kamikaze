@@ -15,7 +15,7 @@
       <nav aria-label="Navegación principal">
         <a href="#coleccion">Colección</a>
         <a href="#filosofia">Nuestro espíritu</a>
-        <a href="#carrito">Bolsa <span id="badge">0</span> ↗</a>
+        <a href="#carrito" id="abrirCarrito" aria-haspopup="dialog" aria-controls="carrito">Bolsa <span id="badge">0</span> ↗</a>
       </nav>
     </header>
     <main>
@@ -44,27 +44,27 @@
             <div class="filters"><label for="buscar" class="search"><span aria-hidden="true">⌕</span><input id="buscar" type="search" placeholder="Busca tu próximo esencial…" aria-label="Buscar productos"></label><select id="categoria" aria-label="Filtrar por categoría"><option value="todas">Todas las categorías</option><option>Shorts</option><option>Camisetas</option><option>Accesorios</option><option>Guantes</option></select></div>
             <div id="catalogo" class="product-grid">
                 <img data-producto="1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJp9UjqOh79-PeGvjjQRPbU3K-DCfEC30iqit8J-M55mDbsTi431NcQig&s=10">
-              <!-- 2. Shorts Thai Fuego: pega tu enlace en src -->
+              //Imagenes-1
               <img data-producto="2" src="https://prodigiumstore.com/cdn/shop/files/Mesadetrabajo1.png?v=1732814603">
-              <!-- 3. Camiseta Fight Club: pega tu enlace en src -->
+              //Imagenes-2
               <img data-producto="3" src="https://prodigiumstore.com/cdn/shop/files/Mesadetrabajo2.png?v=1732814603">
-              <!-- 4. Camiseta Nak Muay: pega tu enlace en src -->
+              //Imagenes-3
               <img data-producto="4" src="https://prodigiumstore.com/cdn/shop/files/CamisetaBuakawPosterior_optimized.webp?v=1788251671&width=1445">
-              <!-- 5. Vendas Round One: pega tu enlace en src -->
+              //Imagenes-4
               <img data-producto="5" src="https://m.media-amazon.com/images/I/81wDYBSW4XL._AC_UF350,350_QL80_.jpg">
-              <!-- 6. Shorts Thai Olive: pega tu enlace en src -->
+              //Imagenes-5
               <img data-producto="6" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuUteNFqmgUSTv5gmYKzBl5NeIzafPVPbukzBpGePvqF7faSLQHtRUcd44&s=10">
-              <!-- 7. Camiseta Training: pega tu enlace en src -->
+              //Imagenes-6
               <img data-producto="7" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRpAcIboPBYAFu2mdHfzN5oYre5mkJf2OMuJBWx4AnNDjE3ae5mGiySwk&s=10">
-              <!-- 8. Bolsa Gym Essentials: pega tu enlace en src -->
+              //Imagenes-7
               <img data-producto="8" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-jk2-B4yQNJ2wRGxw7yXD96N8vPDofuihs8CCODd9-g&s=10">
             </div>
             <p id="sinResultados" hidden>No encontramos ese producto. Prueba otra búsqueda o categoría.</p>
           </div>
-          <aside id="carrito" aria-labelledby="cart-title">
+          <dialog id="carrito" class="cart-modal" aria-labelledby="cart-title">
             <div class="cart-heading">
               <h2 id="cart-title">Tu bolsa</h2>
-              <span>↗</span>
+              <button id="cerrarCarrito" class="cart-close" type="button" aria-label="Cerrar bolsa" autofocus>×</button>
             </div>
             <p class="muted">Tu próximo entrenamiento empieza aquí.</p>
             <p id="carritoVacio" class="empty">Tu bolsa está esperando su primer round.<br><a href="#coleccion">Encuentra tus esenciales ↓</a></p>
@@ -76,10 +76,9 @@
             <button class="button primary" id="btnConfirmar" type="button">CONFIRMAR PEDIDO <span>↗</span></button><button id="btnVaciar" type="button">Vaciar bolsa</button>
             <p class="cart-footnote">5% de descuento desde 5 unidades.<br>10% desde 10 unidades.</p>
             <p class="muted">Compra de demostración: no se realizan cobros.</p>
-          </aside>
+            <p id="mensaje" role="status" hidden></p>
+          </dialog>
         </div>
-        <p id="mensaje" role="status" hidden>
-        </p>
       </section>
       <section class="manifesto" id="filosofia">
         <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKFrHFBZVAbro6Gp25AG970OkCEOjniFHzeMNjAnShMBnINdNY4_XNBfQc&s=10">

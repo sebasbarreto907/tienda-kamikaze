@@ -1,8 +1,7 @@
-// ===== Facturador 4.0 · Carrito · Semana 4 =====
-// Manipulación del DOM: crear, modificar y eliminar elementos a partir del ESTADO
+//Facturador 4.0 · Carrito · Semana 4 
 
-// 1. DATOS (catálogo fijo)
-const IVA = 0.15; // IVA vigente en Ecuador: 15 %
+// 1. DATOS (catálogo)
+const IVA = 0.15; // IVA: 15 %
 const catalogo = [
   {
     "id": 1,
@@ -70,9 +69,9 @@ const catalogo = [
   }
 ];
 
-// 2. ESTADO: los datos que describen lo que se ve en pantalla
+// 2. ESTADO:
 const estado = {
-  carrito: [],        // [{ id: 2, cantidad: 3 }, ...]
+  carrito: [],        
   busqueda: "",
   categoria: "todas",
   envio: "retiro",
@@ -81,7 +80,7 @@ const estado = {
 
 // 3. ELEMENTOS DEL DOM
 const contCatalogo = document.querySelector("#catalogo");
-// Guarda los enlaces del HTML antes de dibujar o filtrar el catalogo.
+
 const fotosProductos = new Map();
 const plantillaFotos = document.querySelector("#fotosProductos");
 for (const foto of [
@@ -103,7 +102,7 @@ const btnVaciar = document.querySelector("#btnVaciar");
 const mensaje = document.querySelector("#mensaje");
 const badge = document.querySelector("#badge");
 
-// 4. FUNCIONES DE CÁLCULO (vienen de la semana 2)
+// 4. FUNCIONES DE CÁLCULO
 const formatoDinero = (valor) => `$${valor.toFixed(2)}`;
 
 function porcentajeDescuento(unidades) {
@@ -160,9 +159,9 @@ function quitar(id) {
   estado.carrito = estado.carrito.filter((i) => i.id !== id);
 }
 
-// 6. FUNCIONES QUE DIBUJAN (RENDER): leen el estado y actualizan el DOM
+// 6. FUNCIONES QUE DIBUJAN (RENDER)
 
-// Crea la tarjeta de un producto con createElement y textContent
+
 function crearTarjetaProducto(producto) {
   const tarjeta = document.createElement("article");
   tarjeta.classList.add("producto");
@@ -363,6 +362,57 @@ btnConfirmar.addEventListener("click", () => {
   estado.carrito = [];
   render();
 });
+
+// Modal del carrito
+const modalCarrito = document.querySelector("#carrito");
+const abrirCarrito = document.querySelector("#abrirCarrito");
+const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)");
+let cerrandoCarrito = false;
+
+abrirCarrito.addEventListener("click", (evento) => {
+  evento.preventDefault();
+  if (modalCarrito.open || cerrandoCarrito) return;
+  modalCarrito.showModal();
+  document.body.classList.add("cart-open");
+  if (!reducirMovimiento.matches) {
+    modalCarrito.animate([
+      { opacity: 0, transform: "translateY(28px) scale(.96)" },
+      { opacity: 1, transform: "translateY(0) scale(1)" },
+    ], { duration: 280, easing: "cubic-bezier(.2,.8,.2,1)" });
+  }
+});
+
+async function cerrarCarrito() {
+  if (!modalCarrito.open || cerrandoCarrito) return;
+  cerrandoCarrito = true;
+  try {
+    if (!reducirMovimiento.matches) {
+      await modalCarrito.animate([
+        { opacity: 1, transform: "translateY(0) scale(1)" },
+        { opacity: 0, transform: "translateY(20px) scale(.97)" },
+      ], { duration: 180, easing: "ease-in", fill: "forwards" }).finished;
+    }
+  } finally {
+    modalCarrito.close();
+    modalCarrito.getAnimations().forEach((animacion) => animacion.cancel());
+    document.body.classList.remove("cart-open");
+    cerrandoCarrito = false;
+  }
+}
+
+document.querySelector("#cerrarCarrito").addEventListener("click", cerrarCarrito);
+modalCarrito.addEventListener("cancel", (evento) => {
+  evento.preventDefault();
+  cerrarCarrito();
+});
+modalCarrito.addEventListener("click", (evento) => {
+  const limites = modalCarrito.getBoundingClientRect();
+  if (evento.target === modalCarrito && (
+    evento.clientX < limites.left || evento.clientX > limites.right ||
+    evento.clientY < limites.top || evento.clientY > limites.bottom
+  )) cerrarCarrito();
+});
+carritoVacio.querySelector("a").addEventListener("click", cerrarCarrito);
 
 // 8. PRIMER DIBUJO al cargar la página
 render();
