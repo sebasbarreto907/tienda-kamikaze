@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ropa y esenciales para entrenar Muay Thai. Equípate para el siguiente round.">
+    <title>NAK MUAY — Fightwear</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">DISCIPLINA. RESPETO. EVOLUCIÓN. <span>EL ARTE DE LAS OCHO EXTREMIDADES</span></div>
+    <header>
+      <a class="brand" href="#inicio">NAK<span>✳</span>MUAY<small>FIGHTWEAR / EST. 2026</small></a>
+      <nav aria-label="Navegación principal">
+        <a href="#coleccion">Colección</a>
+        <a href="#filosofia">Nuestro espíritu</a>
+        <a href="#carrito">Bolsa <span id="badge">0</span> ↗</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero" id="inicio">
+        <img class="hero-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSed9QLtUrYIMJID-ii_PG-rI8Bu8aM3B6X0qb4Zkavqo3itlPo9kJBQvM&s=10" alt="Atletas entrenando combate en el gimnasio" fetchpriority="high">
+        <div class="hero-copy">
+          <p class="eyebrow">MUAY THAI FIGHTWEAR — COLECCIÓN 01</p>
+          <h1>EL SIGUIENTE<br>ROUND ES <em>TUYO.</em></h1>
+          <p>Entrena con intención. Viste con carácter.<br>Ropa que acompaña cada paso de tu camino.</p>
+          <a class="button primary" href="#coleccion">EXPLORAR COLECCIÓN <span>↗</span></a>
+          <div class="hero-note">01 / 2026 <span>DEL GIMNASIO AL RING.</span></div>
+        </div>
+        <span class="vertical">BUILT FOR THE FIGHT WITHIN</span>
+      </section>
+      <div class="ticker" aria-hidden="true">HECHO PARA ENTRENAR <span>✳</span> NACIDO PARA LUCHAR <span>✳</span> NAK MUAY FIGHTWEAR <span>✳</span></div>
+      <section class="section" id="coleccion">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TUS ESENCIALES, SIN EXCUSAS</p>
+            <h2>Equípate para el round.</h2>
+          </div>
+          <p class="collection-note">COLECCIÓN DE ENTRENAMIENTO<br>08 ESENCIALES / UN MISMO ESPÍRITU</p>
+        </div>
+        <div class="shop-layout">
+          <div>
+            <div class="filters"><label for="buscar" class="search"><span aria-hidden="true">⌕</span><input id="buscar" type="search" placeholder="Busca tu próximo esencial…" aria-label="Buscar productos"></label><select id="categoria" aria-label="Filtrar por categoría"><option value="todas">Todas las categorías</option><option>Shorts</option><option>Camisetas</option><option>Accesorios</option><option>Guantes</option></select></div>
+            <div id="catalogo" class="product-grid">
+                <img data-producto="1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJp9UjqOh79-PeGvjjQRPbU3K-DCfEC30iqit8J-M55mDbsTi431NcQig&s=10">
+              <!-- 2. Shorts Thai Fuego: pega tu enlace en src -->
+              <img data-producto="2" src="https://prodigiumstore.com/cdn/shop/files/Mesadetrabajo1.png?v=1732814603">
+              <!-- 3. Camiseta Fight Club: pega tu enlace en src -->
+              <img data-producto="3" src="https://prodigiumstore.com/cdn/shop/files/Mesadetrabajo2.png?v=1732814603">
+              <!-- 4. Camiseta Nak Muay: pega tu enlace en src -->
+              <img data-producto="4" src="https://prodigiumstore.com/cdn/shop/files/CamisetaBuakawPosterior_optimized.webp?v=1788251671&width=1445">
+              <!-- 5. Vendas Round One: pega tu enlace en src -->
+              <img data-producto="5" src="https://m.media-amazon.com/images/I/81wDYBSW4XL._AC_UF350,350_QL80_.jpg">
+              <!-- 6. Shorts Thai Olive: pega tu enlace en src -->
+              <img data-producto="6" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuUteNFqmgUSTv5gmYKzBl5NeIzafPVPbukzBpGePvqF7faSLQHtRUcd44&s=10">
+              <!-- 7. Camiseta Training: pega tu enlace en src -->
+              <img data-producto="7" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRpAcIboPBYAFu2mdHfzN5oYre5mkJf2OMuJBWx4AnNDjE3ae5mGiySwk&s=10">
+              <!-- 8. Bolsa Gym Essentials: pega tu enlace en src -->
+              <img data-producto="8" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-jk2-B4yQNJ2wRGxw7yXD96N8vPDofuihs8CCODd9-g&s=10">
+            </div>
+            <p id="sinResultados" hidden>No encontramos ese producto. Prueba otra búsqueda o categoría.</p>
+          </div>
+          <aside id="carrito" aria-labelledby="cart-title">
+            <div class="cart-heading">
+              <h2 id="cart-title">Tu bolsa</h2>
+              <span>↗</span>
+            </div>
+            <p class="muted">Tu próximo entrenamiento empieza aquí.</p>
+            <p id="carritoVacio" class="empty">Tu bolsa está esperando su primer round.<br><a href="#coleccion">Encuentra tus esenciales ↓</a></p>
+            <ul id="listaCarrito" aria-label="Productos en tu bolsa">
+            </ul>
+            <label class="shipping-label" for="envio">Entrega</label><select id="envio"><option value="retiro">Retiro en tienda · Gratis</option><option value="cuenca">Envío a Cuenca · $2.50</option><option value="nacional">Envío nacional · $6.00</option></select>
+            <div id="resumen" aria-live="polite">
+            </div>
+            <button class="button primary" id="btnConfirmar" type="button">CONFIRMAR PEDIDO <span>↗</span></button><button id="btnVaciar" type="button">Vaciar bolsa</button>
+            <p class="cart-footnote">5% de descuento desde 5 unidades.<br>10% desde 10 unidades.</p>
+            <p class="muted">Compra de demostración: no se realizan cobros.</p>
+          </aside>
+        </div>
+        <p id="mensaje" role="status" hidden>
+        </p>
+      </section>
+      <section class="manifesto" id="filosofia">
+        <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKFrHFBZVAbro6Gp25AG970OkCEOjniFHzeMNjAnShMBnINdNY4_XNBfQc&s=10">
+        <div>
+          <p class="eyebrow">MÁS QUE UN DEPORTE. UNA FORMA DE VIVIR.</p>
+          <h2>El carácter se forja.<br><em>Round a round.</em></h2>
+          <p>No importa si hoy pisas el gimnasio por primera vez o te preparas para tu próxima pelea. Compartimos la misma mentalidad: presentarnos, darlo todo y volver mañana.</p>
+          <a href="#coleccion">ENCUENTRA TU EQUIPO ↗</a><small>RESPETO / DISCIPLINA / CORAZÓN</small>
+        </div>
+      </section>
+      <section class="values section">
+        <article>
+          <span>01 / MOVIMIENTO</span>
+          <h3>Libertad para cada golpe.</h3>
+          <p>Shorts y prendas para acompañar tu entrenamiento.</p>
+        </article>
+        <article>
+          <span>02 / TU EQUIPO</span>
+          <h3>De la base al siguiente nivel.</h3>
+          <p>Ropa y accesorios para armar tu kit de Muay Thai.</p>
+        </article>
+        <article>
+          <span>03 / TU RITMO</span>
+          <h3>Elige cómo recibirlo.</h3>
+          <p>Retiro en tienda, envío a Cuenca o envío nacional.</p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="#inicio">NAK✳MUAY</a>
+      <div>
+        <p>HECHO PARA EL SIGUIENTE ROUND.</p>
+        <small>© 2026 · Proyecto de Sebastián Barreto y Mateo Ortiz</small>
+      </div>
+      <a href="#inicio">VOLVER ARRIBA ↑</a>
+    </footer>
+  </body>
+</html>
