@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nombre": "Bandera KAMIKAZE CUENCA",
+    "precio": 50,
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 2,
+    "nombre": "Shorts Thai Dragon Ball Z",
+    "precio": 45,
+    "categoria": "Shorts"
+  },
+  {
+    "id": 3,
+    "nombre": "Shorts Thai Dragon",
+    "precio": 40,
+    "categoria": "Shorts"
+  },
+  {
+    "id": 4,
+    "nombre": "Camiseta Nak Muay Prodigium",
+    "precio": 45,
+    "categoria": "Camisetas"
+  },
+  {
+    "id": 5,
+    "nombre": "Guantes naga tahi UFC DRAGON DORADO",
+    "precio": 80,
+    "categoria": "Guantes"
+  },
+  {
+    "id": 6,
+    "nombre": "Guantes de Muay Yamantaka Fairtex",
+    "precio": 175,
+    "categoria": "Guantes"
+  },
+  {
+    "id": 7,
+    "nombre": "Guantes de Muay tahi Fairtex URFACE",
+    "precio": 250,
+    "categoria": "Guantes"
+  },
+  {
+    "id": 8,
+    "nombre": "Bolsa Fairtex Pro Fight Bag",
+    "precio": 60,
+    "categoria": "Accesorios"
+  }
+]

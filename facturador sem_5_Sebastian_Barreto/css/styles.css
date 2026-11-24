@@ -857,3 +857,14 @@ footer small {
   grid-template-columns: minmax(0, 1fr);
 }
 
+.enlace-lab {
+  margin-left: auto;
+  margin-right: 18px;
+  color: #f0b429;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.enlace-lab:hover {
+  text-decoration: underline;
+}

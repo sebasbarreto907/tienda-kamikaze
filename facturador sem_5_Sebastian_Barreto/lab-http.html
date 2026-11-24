@@ -1,0 +1,74 @@
+<a href="lab-http.html" class="enlace-lab">🔬 Laboratorio HTTP</a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio HTTP · Tienda Tech</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/lab.css">
+  <script type="module" src="js/lab.js"></script>
+</head>
+<body>
+  <header class="barra">
+    <h1>🔬 Laboratorio HTTP</h1>
+    <a href="index.html" class="enlace-lab">← Volver al carrito</a>
+  </header>
+
+  <main class="lab">
+    <!-- 1. PETICIÓN: lo que envía el cliente -->
+    <section class="panel">
+      <h2>1. El cliente hace una petición</h2>
+      <p class="ayuda">Abre <strong>F12 → Network</strong> antes de pulsar. Cada botón envía una petición al servidor (Live Server).</p>
+
+      <div class="rapidos">
+        <button type="button" class="rapido" data-metodo="GET" data-url="data/productos.json">GET productos.json</button>
+        <button type="button" class="rapido" data-metodo="GET" data-url="data/ofertas.json">GET ofertas.json</button>
+        <button type="button" class="rapido" data-metodo="HEAD" data-url="data/productos.json">HEAD productos.json</button>
+        <button type="button" class="rapido" data-metodo="GET" data-url="index.html">GET index.html</button>
+        <button type="button" class="rapido" data-metodo="GET" data-url="css/styles.css">GET styles.css</button>
+      </div>
+
+      <form id="formPeticion" class="form-peticion">
+        <select id="metodo" aria-label="Método">
+          <option value="GET">GET</option>
+          <option value="HEAD">HEAD</option>
+        </select>
+        <input type="text" id="url" value="js/calculos.js" aria-label="Ruta o URL" required>
+        <button type="submit" class="principal">Enviar petición</button>
+      </form>
+    </section>
+
+    <!-- 2. RESPUESTA: lo que devuelve el servidor -->
+    <section class="panel">
+      <h2>2. El servidor responde</h2>
+      <p id="sinRespuesta" class="vacio">Todavía no hay respuestas. Pulsa un botón.</p>
+      <div id="detalle" hidden>
+        <p id="lineaEstado" class="linea-estado"></p>
+        <p id="significado" class="significado"></p>
+        <h3>Cabeceras de la respuesta</h3>
+        <ul id="cabeceras" class="cabeceras"></ul>
+        <h3>Cuerpo (primeros 300 caracteres)</h3>
+        <pre id="cuerpo" class="cuerpo"></pre>
+      </div>
+    </section>
+
+    <!-- 3. REGISTRO: historial de la comunicación -->
+    <section class="panel ancho">
+      <div class="titulo-registro">
+        <h2>3. Registro de peticiones</h2>
+        <button type="button" id="btnLimpiar" class="secundario">Limpiar registro</button>
+      </div>
+      <div class="tabla-scroll">
+        <table class="registro">
+          <thead>
+            <tr><th>#</th><th>Método</th><th>URL</th><th>Estado</th><th>Tipo (Content-Type)</th><th>Tamaño</th><th>Tiempo</th></tr>
+          </thead>
+          <tbody id="registro"></tbody>
+        </table>
+      </div>
+      <p id="resumenRegistro" class="ayuda"></p>
+    </section>
+  </main>
+</body>
+</html>

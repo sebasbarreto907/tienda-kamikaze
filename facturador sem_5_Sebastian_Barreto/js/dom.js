@@ -5,7 +5,7 @@ const fotosProductos = new Map();
 const plantillaFotos = document.querySelector("#fotosProductos");
 for (const foto of [
   ...(plantillaFotos?.content.querySelectorAll("img[data-producto]") || []),
-  ...contCatalogo.querySelectorAll("img[data-producto]"),
+  ...(contCatalogo?.querySelectorAll("img[data-producto]") || []),
 ]) {
   const enlace = foto.getAttribute("src")?.trim();
   if (enlace) fotosProductos.set(Number(foto.dataset.producto), enlace);
@@ -25,5 +25,12 @@ const badge = document.querySelector("#badge");
 const modalCarrito = document.querySelector("#carrito");
 const abrirCarrito = document.querySelector("#abrirCarrito");
 const cerrarCarritoBtn = document.querySelector("#cerrarCarrito");
+
+export function crearElemento(etiqueta, { texto, clase } = {}) {
+  const elemento = document.createElement(etiqueta);
+  if (texto !== undefined) elemento.textContent = texto;
+  if (clase) elemento.className = clase;
+  return elemento;
+}
 
 export { contCatalogo, fotosProductos, sinResultados, inputBuscar, selectCategoria, listaCarrito, carritoVacio, selectEnvio, resumen, btnConfirmar, btnVaciar, mensaje, badge, modalCarrito, abrirCarrito, cerrarCarritoBtn };
